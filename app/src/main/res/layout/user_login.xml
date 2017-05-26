@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff8a51">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip >>"
+        android:textSize="20dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/skip"
+        android:textColor="#f4e983"/>
+    <ImageView
+        android:id="@+id/user_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/user_image"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Login"
+        android:layout_below="@+id/user_image"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="true"
+        android:textColor="#f4e983"
+        android:textSize="25dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_facebook"
+        android:layout_below="@+id/user_image"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Login with facebook"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="90dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_google"
+        android:layout_below="@+id/user_facebook"
+        android:text="login with google"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#ef0000"
+        android:layout_marginTop="10dp"
+        />
+
+</RelativeLayout>
