@@ -1,4 +1,6 @@
 package com.foodie.grv.foodie;
+
+
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -14,14 +16,16 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import model.Categories;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
+    private FirebaseAnalytics mFirebaseAnalytics;
     private RecyclerView recyclerView;
     private CategoriesAdapter adapter;
     private List<Categories> albumList;
@@ -59,18 +63,17 @@ public class MainActivity extends AppCompatActivity {
      * Initializing collapsing toolbar
      * Will show and hide the toolbar title on scroll
      */
+
     private void initCollapsingToolbar() {
         final CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle(" ");
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         appBarLayout.setExpanded(true);
-
         // hiding & showing the title when toolbar expanded & collapsed
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean isShow = false;
             int scrollRange = -1;
-
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 if (scrollRange == -1) {
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     collapsingToolbar.setTitle(getString(R.string.app_name));
                     isShow = true;
                 } else if (isShow) {
-                    collapsingToolbar.setTitle(" ");
+                    collapsingToolbar.setTitle("");
                     isShow = false;
                 }
             }
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Adding few albums for testing
      */
+
     private void prepareAlbums() {
         int[] covers = new int[]{
                 R.drawable.indianfood,
